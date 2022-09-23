@@ -23,7 +23,7 @@ continue_reward = 1
 fail_reward = -400
 target_update = 20
 epoch = 40
-seed = 123
+seed = 128
 torch.manual_seed(seed)
 random.seed(seed)
 
@@ -196,8 +196,8 @@ if __name__ == '__main__':
                 loss.backward()
                 optimizer.step()
                 
-            # if t > 1000:
-            #     env.render()
+            if round > avg_steps:
+                env.render()
 
             round += 1
             if done:
